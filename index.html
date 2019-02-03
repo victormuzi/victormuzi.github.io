@@ -173,20 +173,44 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>GitBash是由一系列的命令行组成的一个小型操作系统，Bash是shell环境，Bourne Again Shell的缩写，它是Unix的初始外壳程序之一。下面我们介绍一些常用命令的使用方法。</p>
-<p><strong>ls</strong><br>ls是命令中最常用的指令之一，ls命令将每个由 Directory（目录）参数指定的目录或者每个由 File参数指定的名称写到标准输出，以及您所要求的和标志一起的其它信息。如果不指定 File 或 Directory 参数， ls 命令显示当前目录的内容。（见下图）<br><img src="/2019/02/03/GitBash几个常用命令释义/图1.png" alt="ls释义"><br>上图中新建文件夹：GitBash几个常用命令释义，新建文件index.html，然后再建css文件夹(mkdir即新建文件/文件夹)，css里面新建文件style.css，这时候我们&lt;GitBash几个常用命令释义&gt;文件夹里面就有了文件index.html和文件夹css，那输入指令ls就会罗列显示当前&lt;GitBash几个常用命令释义&gt;文件夹里面的内容，自己可以试一下。<br>还有一个就是指定目录或者文件，显示里面的内容，(见下图)我们新建了demo、demo-1、demo-2三个文件夹，那我们用ls指定这三个文件夹，就会罗列每个文件夹里面的内容：<br><img src="/2019/02/03/GitBash几个常用命令释义/图2.png" alt="ls释义"></p>
-<p><strong>cat</strong><br>cat命令通常是用于观看某个文件的内容，主要有三大功能：</p>
+<p><strong>ls</strong></p>
+<p>ls是命令中最常用的指令之一，ls命令将每个由 Directory（目录）参数指定的目录或者每个由 File参数指定的名称写到标准输出，以及您所要求的和标志一起的其它信息。如果不指定 File 或 Directory 参数， ls 命令显示当前目录的内容。（见下图）</p>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图1.png" alt="ls释义"></p>
+<p>上图中新建文件夹(GitBash几个常用命令释义)，新建文件index.html，然后再建css文件夹(mkdir即新建文件/文件夹)，css里面新建文件style.css，这时候我们&lt;GitBash几个常用命令释义&gt;文件夹里面就有了文件index.html和文件夹css，那输入指令ls就会罗列显示当前&lt;GitBash几个常用命令释义&gt;文件夹里面的内容，自己可以试一下。</p>
+<p>还有一个就是指定目录或者文件，显示里面的内容，(见下图)我们新建了demo、demo-1、demo-2三个文件夹，那我们用ls指定这三个文件夹，就会罗列每个文件夹里面的内容：</p>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图2.png" alt="ls释义"></p>
+<p><strong>cat</strong></p>
+<p>cat命令通常是用于观看某个文件的内容，主要有三大功能：</p>
 <ol>
-<li>一次显示整个文件内容<br>$ cat 1.txt<br><img src="/2019/02/03/GitBash几个常用命令释义/图3.png" alt="cat释义"></li>
-<li>创建一个文件，只能创建新文件，不能编辑已有文件<br>$ cat &gt; 2.txt<br><img src="/2019/02/03/GitBash几个常用命令释义/图4.png" alt="cat释义"></li>
-<li>将几个文件合并为一个文件<br>$cat 1.txt 2.txt &gt; 3.txt<br><img src="/2019/02/03/GitBash几个常用命令释义/图5.png" alt="cat释义"></li>
+<li>一次显示整个文件内容<br>$ cat 1.txt，图中可以看到cat后显示文件内容：hello world</li>
 </ol>
-<p><strong>mv</strong><br>mv命令是move的缩写，可以用来移动文件或者重命名文件，下图可以看到mv的释义是：move(rename) files，是系统中常用的命令，经常用来备份文件或者目录。<br><img src="/2019/02/03/GitBash几个常用命令释义/图8.png" alt="mv释义"></p>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图3.png" alt="cat释义"></p>
+<ol start="2">
+<li>创建一个文件，只能创建新文件，不能编辑已有文件<br>$ cat &gt; 2.txt，下图中cat命令后出现的文件2.txt</li>
+</ol>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图4.png" alt="cat释义"></p>
+<ol start="3">
+<li>将几个文件合并为一个文件<br>$cat 1.txt 2.txt &gt; 3.txt，图中显示的是1.txt和2.txt被cat后，两个文件的内容合并到3.txt</li>
+</ol>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图5.png" alt="cat释义"></p>
+<p><strong>mv</strong></p>
+<p>mv命令是move的缩写，可以用来移动文件或者重命名文件，下图可以看到mv的释义是：move(rename) files，是系统中常用的命令，经常用来备份文件或者目录。</p>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图8.png" alt="mv释义"></p>
 <ol>
-<li>重命名文件<br><img src="/2019/02/03/GitBash几个常用命令释义/图6.png" alt="mv释义"></li>
-<li>剪切(移动文件)<br><img src="/2019/02/03/GitBash几个常用命令释义/图7.png" alt="mv释义"></li>
+<li>重命名文件，图中的1.txt被重命名为file.txt</li>
 </ol>
-<p><strong>touch</strong><br>touch命令最直接的作用就是建立新的空文件。(见下图)<br><img src="/2019/02/03/GitBash几个常用命令释义/图9.png" alt="touch释义"><br>图中可以看到我一共建了3个文件，可以自己动手试一下，so easy</p>
-<p><strong>explainshell.com</strong><br><img src="/2019/02/03/GitBash几个常用命令释义/图10.png" alt="网站explainshell的使用方法"><br>explain即解释的意思，连起来就是解释命令语言的网站。使用起来也非常简单啦，输入你要查询的命令，回车即可。试着把鼠标箭头放在命令的不同位置，它就会解释那个位置的意思。</p>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图6.png" alt="mv释义"></p>
+<ol start="2">
+<li>剪切(移动文件)，图中2.txt被剪切到了demo的文件夹里</li>
+</ol>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图7.png" alt="mv释义"></p>
+<p><strong>touch</strong></p>
+<p>touch命令最直接的作用就是建立新的空文件。(见下图)</p>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图9.png" alt="touch释义"></p>
+<p>上图中可以看到我一共建了3个文件，可以自己动手试一下，so easy</p>
+<p><strong>explainshell.com</strong></p>
+<p><img src="/2019/02/03/GitBash几个常用命令释义/图10.png" alt="网站explainshell的使用方法"></p>
+<p>explain即解释的意思，连起来就是解释命令语言的网站。使用起来也非常简单啦，输入你要查询的命令，回车即可。试着把鼠标箭头放在命令的不同位置，它就会解释那个位置的意思。</p>
 <p>就酱紫！</p>
 
       
