@@ -240,6 +240,30 @@
 <p>用 Chrome 查看响应<br>打开 Network<br>输入网址：<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>选中第一个响应<br>查看 Response Headers，点击「view source」，点击「view source」，点击「view source」<br>你会看到响应的前两部分<br>查看 Response 或者 Preview，你会看到响应的第 4 部分</p>
 <p><img src="/2019/02/08/HTTP教程/9.png" alt="Request Header"></p>
 <p>响应的格式<br>1 协议/版本号 状态码 状态解释<br>2 Key1: value1<br>2 Key2: value2<br>2 Content-Length: 17931<br>2 Content-Type: text/html<br>3<br>4 要下载的内容<br>状态码要背，是服务器对浏览器说的话<br>1xx 不常用<br>2xx 表示成功<br>3xx 表示滚吧<br>4xx 表示你丫错了<br>5xx 表示好吧，我错了<br>状态解释没什么用<br>第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>第 2 部分中的 Content-Type 遵循 MIME 规范</p>
+<h3 id="如何使用curl命令"><a href="#如何使用curl命令" class="headerlink" title="如何使用curl命令"></a>如何使用curl命令</h3><p><a href="https://curl.haxx.se/" target="_blank" rel="noopener">https://curl.haxx.se/</a><br>上面是curl的官网，我们可以从官网了解一些关于curl的消息。<br>比如：What’s curl used for?看下图</p>
+<p><img src="/2019/02/08/HTTP教程/10.png" alt="curl英文"><br><img src="/2019/02/08/HTTP教程/11.png" alt="curl中文"></p>
+<p>curl的全称是CommandLine URL，也就是说，curl是URL命令行，利用URL的语法进行数据传输或者文件传输的。<br>curl is free and open source software.官网显示curl是开源和免费的，功能很强大，支持三十多种传输方式：<br>Supports…<br>DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, Telnet and TFTP. curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, HTTP/2, cookies, user+password authentication (Basic, Plain, Digest, CRAM-MD5, NTLM, Negotiate and Kerberos), file transfer resume, proxy tunneling and more. </p>
+<p>最常使用的有FILE、FTP、HTTP、HTTPS等协议。<br>对于程序猿在说，开发远程服务的时候，比如http传输，SOCKET等网络编程时，这个工具能非常方便的作为你的验证工具和测试工具。<br>比如下面这个用法，通过输入：<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 甚至还不是一个完整的URL，因为没有指明所用的协议，curl可以智能地进行选择。<br>运行后，返回的是一个百度主页的HTML代码。</p>
+<p><img src="/2019/02/08/HTTP教程/12.png" alt="curl百度"></p>
+<p>本文主要介绍一些curl的常用命令，更多用法请参阅官网。</p>
+<p>一般语法如下：</p>
+<ul>
+<li>crul -[选项] [URL]</li>
+</ul>
+<ol>
+<li>-v选项，表示verbose，指定该选项后，显示的是http请求的通信过程。</li>
+</ol>
+<p>比如刚才演示的百度链接，加入-v后，看它多出了哪些选项。<br>加上-v后，我们得到了：<br>连接的IP地址和端口，协议（HTTP），请求方式（GET），包含状态码（200），内容格式（text/html），内容长度等等</p>
+<p><img src="/2019/02/08/HTTP教程/13.png" alt="curl -v"></p>
+<ol start="2">
+<li>-I选项，只获得对方的响应头部信息。</li>
+</ol>
+<p><img src="/2019/02/08/HTTP教程/14.png" alt="curl -I"></p>
+<ol start="3">
+<li>-X选项，指定请求方式，URL可以有多种请求方式，最常见的是GET和POST，但其他还有GET、PUT、POST、DELETE等多种方式。 </li>
+</ol>
+<p><img src="/2019/02/08/HTTP教程/15.png" alt="curl -X"></p>
+<p>curl还有很多实用的功能，更多见：<a href="https://www.cnblogs.com/yinzhengjie/p/7719804.html" target="_blank" rel="noopener">https://www.cnblogs.com/yinzhengjie/p/7719804.html</a> &amp; <a href="https://blog.csdn.net/deliciousion/article/details/78062521" target="_blank" rel="noopener">https://blog.csdn.net/deliciousion/article/details/78062521</a></p>
 <p>以上内容主要来自：</p>
 <ol>
 <li><a href="https://www.runoob.com/http/http-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/http/http-tutorial.html</a></li>
@@ -758,11 +782,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Git   命令行   释义</a>
+                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
+                <a href="javascript:void(0)" class="js-tag color5">Git   命令行   释义</a>
               </li>
              
               <li class="article-tag-list-item">
