@@ -152,6 +152,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-计数排序" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/计数排序/">计数排序</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/计数排序/" class="archive-article-date">
+  	<time datetime="2019-03-13T01:49:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>流程图：</p>
+<p>第一步构建Hash</p>
+<p><img src="/2019/03/13/计数排序/1.png" alt=""></p>
+<p>第二步找出数组的最大值</p>
+<p><img src="/2019/03/13/计数排序/2.png" alt=""></p>
+<p>第三步排序</p>
+<p><img src="/2019/03/13/计数排序/3.png" alt=""></p>
+<p>伪代码：</p>
+<p>a &lt;- {<br>    ‘0’:0,<br>    ‘1’:2,<br>    ‘2’:1,<br>    ‘3’:56,<br>    ‘4’:4,<br>    ‘5’:67,<br>    ‘6’:3,<br>    ‘length:7’<br>}<br>hash &lt;- {}<br>index &lt;- 0<br>while index &lt; a[‘length’]<br>    number &lt;- a[index]<br>    if hash[number] == undefined // hash[number] 不存在<br>        hash[number] = 1<br>    else<br>        hash[number] &lt;- hash[number] + 1<br>    end<br>    index &lt;- index + 1<br>end<br>index2 &lt;- 0<br>max &lt;- findMax(a) // 最大值67<br>newArr &lt;- {}<br>while index2 &lt; max + 1<br>    count &lt;- hash[index2]<br>    if count != undefined // count 存在<br>        countIndex &lt;- 0<br>        while countIndex &lt; count<br>            newArr.push(index2)<br>            countIndex &lt;- countIndex + 1<br>        end<br>    end<br>    index2 &lt;- index2 + 1<br>end<br>print newArr</p>
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><blockquote>
+<p>用到树，将一组数字用二叉堆（树）的结构表示，对这个堆做最大堆调整，创建最大堆，将堆最顶端的数字取出为最大数，将堆最末尾的子叶移到最顶端，再做最大堆调整的递归运算，一直重复直到取出最大的值，完成排序。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">算法  计数排序  堆排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/计数排序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-编程必备常见单词" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1509,7 +1594,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
+                <a href="javascript:void(0)" class="js-tag color2">iframe  a  form  input/button  table</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1517,11 +1602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">iframe  a  form  input/button  table</a>
+                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
+                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1530,6 +1615,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java HTML CSS ajax等</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">算法  计数排序  堆排序</a>
               </li>
             
             <div class="clearfix"></div>
