@@ -152,6 +152,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-文档流宽高-对齐-导航-word-break" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/14/文档流宽高-对齐-导航-word-break/">文档流宽高-对齐-导航-word-break</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/14/文档流宽高-对齐-导航-word-break/" class="archive-article-date">
+  	<time datetime="2019-03-14T03:41:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.块级元素宽高由谁决定？</p>
+<p>写一个div，请问，这个div的高度是多少？是零，使用boder: 1px solid red;调试大法即可看到，如果给div里的元素font-size: 20px;但是通过开发者工具，你会发现，div的高度是28？<br>通过对比字体我们发现：1.字和字之间是通过基线对齐的；2.设计师在设计字体的时候会给出建议行高，行与行之间的间距；<br>所以答案是：默认的行高就是字体的设计师写进去的或者建议的，这就是为什么我们写font-size: 20px;的时候，我的div高度却是一个不确定的值。<br>那这个高度能不能写死？可以，使用line-height: 30px;就行了，不过这里面有个不确定的坑，当line-height写的很小的时候，有时候是会出问题的。</p>
+<p>2.内联元素的宽高由谁决定？</p>
+<p>所以当我在div里面写一个1，那这个div的高度是由这个字的字体乘以字体设计师建议的行高确定的，跟字体有多大没关系。<br>如果div里面只有一个内联元素，那么div的高度就是这个内联元素这一行的行高决定的，这一行也叫行盒。</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/1.jpg" alt=""></p>
+<p>如果div里面有两个字呢，1+空格+2就是1 2没问题，但是1+空格+空格+2呢，你会发现它还是1 2，少了一个空格，没什么原因，HTML会把两个空格缩成一个空格，那如果你就想写两个空格就使用&amp;nbsp（不断行的空格，全称是no break space），写两个就有两个空格。</p>
+<p>那如何做到文字两端对齐，<br>例如：姓   名<br>     联系方式    左边这种对齐布局如何实现？<br>利用text-align: justify，justify可以使文字两端对齐，给一个style: justify;即可实现。但是如果只有一行字，是没办法对齐的。那上面两端对齐如何实现了？看代码：</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/2.jpg" alt=""></p>
+<p>3.横向导航栏</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/3.jpg" alt=""></p>
+<p>4.<br>  i.如果div里面有多个内联元素等一行内容，那么div的高度是由行高决定的；<br>  ii.如果有两行或者很多字，它会自动换行，这叫响应式页面。或者说如果这个内联元素足够多，一行容纳不下，那么它就会自动换行，叫做文档流：内联元素会默认的像水流一样从左向右流动，遇到挡住它就会换行再次从左往右流动。<br>  iii.如果有多方内容，就是把每一行的行高加起来一起算，那如果中间有一个很长的字呢，那就看你加没加word-break: break-all;，如果没加就很奇怪，尤其是英文，会超出div，那如果加了，就会断开，看图片：</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/4.jpg" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">文档流相关  文字两端对齐  导航栏横向  word-break</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/14/文档流宽高-对齐-导航-word-break/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-几个简单排序算法流程图" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1299,114 +1384,6 @@
 
 
   
-    <article id="post-GitBash几个常用命令释义" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/GitBash几个常用命令释义/">GitBash几个常用命令释义</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/GitBash几个常用命令释义/" class="archive-article-date">
-  	<time datetime="2019-02-03T02:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>GitBash是由一系列的命令行组成的一个小型操作系统，Bash是shell环境，Bourne Again Shell的缩写，它是Unix的初始外壳程序之一。下面我们介绍一些常用命令的使用方法。</p>
-<p><strong>ls</strong><br>ls是命令中最常用的指令之一，ls命令将每个由 Directory（目录）参数指定的目录或者每个由 File参数指定的名称写到标准输出，以及您所要求的和标志一起的其它信息。如果不指定 File 或 Directory 参数， ls 命令显示当前目录的内容。（见下图）</p>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图1.png" alt="ls释义"></p>
-<p>上图中新建文件夹(GitBash几个常用命令释义)，新建文件index.html，然后再建css文件夹(mkdir即新建文件/文件夹)，css里面新建文件style.css，这时候我们&lt;GitBash几个常用命令释义&gt;文件夹里面就有了文件index.html和文件夹css，那输入指令ls就会罗列显示当前&lt;GitBash几个常用命令释义&gt;文件夹里面的内容，自己可以试一下。</p>
-<p>还有一个就是指定目录或者文件，显示里面的内容，(见下图)我们新建了demo、demo-1、demo-2三个文件夹，那我们用ls指定这三个文件夹，就会罗列每个文件夹里面的内容：</p>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图2.png" alt="ls释义"></p>
-<p><strong>cat</strong><br>cat命令通常是用于观看某个文件的内容，主要有三大功能：</p>
-<ol>
-<li>一次显示整个文件内容<br>$ cat 1.txt，图中可以看到cat后显示文件内容：hello world</li>
-</ol>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图3.png" alt="cat释义"></p>
-<ol start="2">
-<li>创建一个文件，只能创建新文件，不能编辑已有文件<br>$ cat &gt; 2.txt，下图中cat命令后出现的文件2.txt</li>
-</ol>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图4.png" alt="cat释义"></p>
-<ol start="3">
-<li>将几个文件合并为一个文件<br>$cat 1.txt 2.txt &gt; 3.txt，图中显示的是1.txt和2.txt被cat后，两个文件的内容合并到3.txt</li>
-</ol>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图5.png" alt="cat释义"></p>
-<p><strong>mv</strong><br>mv命令是move的缩写，可以用来移动文件或者重命名文件，下图可以看到mv的释义是：move(rename) files，是系统中常用的命令，经常用来备份文件或者目录。</p>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图8.png" alt="mv释义"></p>
-<ol>
-<li>重命名文件，图中的1.txt被重命名为file.txt</li>
-</ol>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图6.png" alt="mv释义"></p>
-<ol start="2">
-<li>剪切(移动文件)，图中2.txt被剪切到了demo的文件夹里</li>
-</ol>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图7.png" alt="mv释义"></p>
-<p><strong>touch</strong><br>touch命令最直接的作用就是建立新的空文件。(见下图)</p>
-<p><img src="/2019/02/03/GitBash几个常用命令释义/图9.png" alt="touch释义"></p>
-<p>上图中可以看到我一共建了3个文件，可以自己动手试一下，so easy</p>
-<p><strong>explainshell.com</strong><br><img src="/2019/02/03/GitBash几个常用命令释义/图10.png" alt="网站explainshell的使用方法"></p>
-<p>explain即解释的意思，连起来就是解释命令语言的网站。使用起来也非常简单啦，输入你要查询的命令，回车即可。试着把鼠标箭头放在命令的不同位置，它就会解释那个位置的意思。</p>
-<p>就酱紫！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Git   命令行   释义</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/GitBash几个常用命令释义/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1508,11 +1485,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTML5  所有标签  有效标签</a>
+                <a href="javascript:void(0)" class="js-tag color2">iframe  a  form  input/button  table</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">iframe  a  form  input/button  table</a>
+                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HTML5  所有标签  有效标签</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1524,7 +1505,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
+                <a href="javascript:void(0)" class="js-tag color2">冒泡排序  计数排序  选择排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1532,11 +1513,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java HTML CSS ajax等</a>
+                <a href="javascript:void(0)" class="js-tag color3">文档流相关  文字两端对齐  导航栏横向  word-break</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">冒泡排序  计数排序  选择排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java HTML CSS ajax等</a>
               </li>
              
               <li class="article-tag-list-item">
