@@ -9,7 +9,7 @@
   <title>文档流宽高-对齐-导航-word-break | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1.块级元素宽高由谁决定？ 写一个div，请问，这个div的高度是多少？是零，使用boder: 1px solid red;调试大法即可看到，如果给div里的元素font-size: 20px;但是通过开发者工具，你会发现，div的高度是28？通过对比字体我们发现：1.字和字之间是通过基线对齐的；2.设计师在设计字体的时候会给出建议行高，行与行之间的间距；所以答案是：默认的行高就是字体的设计师写进">
-<meta name="keywords" content="文档流相关  文字两端对齐  导航栏横向  word-break">
+<meta name="keywords" content="文档流相关  文字两端对齐  导航栏横向  word-break  多行文字溢出  文字垂直水平居中  margin合并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文档流宽高-对齐-导航-word-break">
 <meta property="og:url" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/index.html">
@@ -20,7 +20,12 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/3.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/4.jpg">
-<meta property="og:updated_time" content="2019-03-14T06:42:30.823Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/6.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/8.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/14/文档流宽高-对齐-导航-word-break/9.jpg">
+<meta property="og:updated_time" content="2019-03-14T07:56:39.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文档流宽高-对齐-导航-word-break">
 <meta name="twitter:description" content="1.块级元素宽高由谁决定？ 写一个div，请问，这个div的高度是多少？是零，使用boder: 1px solid red;调试大法即可看到，如果给div里的元素font-size: 20px;但是通过开发者工具，你会发现，div的高度是28？通过对比字体我们发现：1.字和字之间是通过基线对齐的；2.设计师在设计字体的时候会给出建议行高，行与行之间的间距；所以答案是：默认的行高就是字体的设计师写进">
@@ -192,6 +197,21 @@
 <p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/3.jpg" alt=""></p>
 <p>4.<br>  i.如果div里面有多个内联元素等一行内容，那么div的高度是由行高决定的；<br>  ii.如果有两行或者很多字，它会自动换行，这叫响应式页面。或者说如果这个内联元素足够多，一行容纳不下，那么它就会自动换行，叫做文档流：内联元素会默认的像水流一样从左向右流动，遇到挡住它就会换行再次从左往右流动。<br>  iii.如果有多方内容，就是把每一行的行高加起来一起算，那如果中间有一个很长的字呢，那就看你加没加word-break: break-all;，如果没加就很奇怪，尤其是英文，会超出div，那如果加了，就会断开，看图片：</p>
 <p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/4.jpg" alt=""></p>
+<p>5.多行文字溢出</p>
+<p>div的宽度不是由文字决定的。<br>怎么使多出边框的一行文本变成省略号了？</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/5.jpg" alt=""></p>
+<p>如果多行文本后面变省略号呢？</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/6.jpg" alt=""></p>
+<p>图中数字代表2行文字后面是省略号，如果是3呢，代表3行文字后面是省略号，依此类推；<br>overflow: hidden;是在省略号后面还有文本的情况下，又不想看到文字时使用。</p>
+<p>6.文字垂直居中</p>
+<p>文字垂直居中不要直接写死高度，使用line-height: 24px;和padding: 8px 0;即可做到。</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/7.jpg" alt=""></p>
+<p>文字垂直水平居中：直接添加text-align: center;</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/8.jpg" alt=""></p>
+<p>这样写的好处是：当你文字很多的时候，不会出现任何bug。</p>
+<p>7.margin合并</p>
+<p>假如一个div里面有一个子元素div。<br>如果子元素内部元素变高了，外面父元素也会随之变高，不管是使用height/line-height/padding还是border，父元素都会跟着变高。<br>但如果子元素加了margin:10px;则父元素只会跟着变宽，而不会变高，因为父元素和margin和子元素的margin合并了。<br>就是说如果父元素没有什么东西挡着子元素的margin，那么子元素的margin就会和父元素的margin合并起来。<br>所以子元素的margin到底能不能使它的父元素变高，取决于这个父元素有没有什么东西挡着子元素的这个margin。<br>如果不想让她们合并，就使用border-top和border-bottom，还可以使用padding-top和padding-bottom，即使给出的值是0.1px，也管用。<br>另外还有overflow: hidden;也可以去除margin合并，但不建议使用，因为一旦你加了overflow: hidden;那所有东西都不能超出边框了，万一你要做什么悬浮层，那你就完了，所以overflow不到万不得已，千万不要加。</p>
+<p><img src="/2019/03/14/文档流宽高-对齐-导航-word-break/9.jpg" alt=""></p>
 
       
 
@@ -226,7 +246,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">文档流相关  文字两端对齐  导航栏横向  word-break</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">文档流相关  文字两端对齐  导航栏横向  word-break  多行文字溢出  文字垂直水平居中  margin合并</a>
         		</li>
       		
 		</ul>
@@ -424,6 +444,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">HTML5  所有标签  有效标签</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Git   命令行   释义</a>
               </li>
              
@@ -432,15 +456,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTML5  所有标签  有效标签</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">左右布局  左中右布局  水平居中  垂直居中</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,15 +476,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">文档流相关  文字两端对齐  导航栏横向  word-break</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java HTML CSS ajax等</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">算法  计数排序  堆排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">文档流相关  文字两端对齐  导航栏横向  word-break  多行文字溢出  文字垂直水平居中  margin合并</a>
               </li>
             
             <div class="clearfix"></div>
