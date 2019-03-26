@@ -152,6 +152,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-icon的各种做法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/icon的各种做法/">icon的各种做法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/19/icon的各种做法/" class="archive-article-date">
+  	<time datetime="2019-03-19T13:37:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>icon 的各种做法：</p>
+<p>1.img 法<br>2.background 法<br>3.background 合一法<br>4.font 法<br>5.SVG 法<br>6.新手慎用：「CSS 就是干」法</p>
+<h3 id="切图-使用img添加图片展示"><a href="#切图-使用img添加图片展示" class="headerlink" title="切图 使用img添加图片展示"></a>切图 使用img添加图片展示</h3><p>使用Photoshop新建文档，比如600*800，白色背景，放3个图标在上面，图标可以在iconfont.cn里面找，下面是使用Photoshop制作导出图层的的步骤：</p>
+<p><img src="/2019/03/19/icon的各种做法/1.jpg" alt=""></p>
+<p>导出图层后用页面展示出来，用sublime text或者其他编辑器打开图片文件夹，或者直接拖到sublime里面，右键新建index.html，写代码如下：</p>
+<p><img src="/2019/03/19/icon的各种做法/2.png" alt=""></p>
+<p>看页面不要直接打开，使用命令行打开一个服务器，用gitbash或者终端都可以，进入到桌面的图片文件夹，先安装一个服务器：npm i -g http-server安装完就可以开启一个服务器：http-server -c-1回车，地址栏输入它给的网址即可预览index.html，然后居中这几个图片，隔开点间距：</p>
+<p><img src="/2019/03/19/icon的各种做法/3.jpg" alt=""></p>
+<p>这种方法就是使用img，每个icon就是一个图片，这个方法的好处：</p>
+<p>可以自适应宽高，比如想让图片都变成50*50，就不需要写宽高50，只需要写宽50或者高50就好了，图片的特性就是默认会保持比例：</p>
+<p><img src="/2019/03/19/icon的各种做法/4.jpg" alt=""></p>
+<h3 id="background-icon-背景图法"><a href="#background-icon-背景图法" class="headerlink" title="background icon 背景图法"></a>background icon 背景图法</h3><p>用div做icon，首先把它变成display: inline-block;</p>
+<p><img src="/2019/03/19/icon的各种做法/5.jpg" alt=""></p>
+<p>使用背景图做，尤其是做icon的是否，一般来说是没有好处的，但是当你的图满足一些条件的时候，就有好处了，比如：1.图和div不一样大的时候，当div的宽高不是100的时候，而是100*200，图片不会因为div变大而变化，是不会变形的。</p>
+<p><img src="/2019/03/19/icon的各种做法/6.jpg" alt=""><br><img src="/2019/03/19/icon的各种做法/7.jpg" alt=""></p>
+<p>2.还有一个好处是可以用来做雪碧图，搜索：css sprites generator，一般使用网站：css.spritegen.com，按照步骤做就可以做出一个雪碧图了，然后图片存下来，css直接拷贝他们写好的，之前写好的样式都没用了，删除掉，直接换成网站生成的css即可，加上margin就行了，看图：</p>
+<p><img src="/2019/03/19/icon的各种做法/8.jpg" alt=""><br><img src="/2019/03/19/icon的各种做法/9.jpg" alt=""></p>
+<h3 id="HTML转义或者HTML中有用的字符实体（HTML-entity）"><a href="#HTML转义或者HTML中有用的字符实体（HTML-entity）" class="headerlink" title="HTML转义或者HTML中有用的字符实体（HTML entity）"></a>HTML转义或者HTML中有用的字符实体（HTML entity）</h3><p>比如：空格可以用&amp;+nbsp;（nonbreak space）表示空格，想几个空格就打几个。&amp;gt表示&gt;号，&amp;lt表示&lt;号。搜索：html entity,就会出现字符实体。</p>
+<p><img src="/2019/03/19/icon的各种做法/10.jpg" alt=""></p>
+<p><img src="/2019/03/19/icon的各种做法/11.jpg" alt=""></p>
+<h3 id="使用css写content，ie6不支持-同样的原理，我们使用伪类，使用样式来写，找到元素，class-xxx，-xxx后面写个before，content-‘hi’-div里面就会出现hi"><a href="#使用css写content，ie6不支持-同样的原理，我们使用伪类，使用样式来写，找到元素，class-xxx，-xxx后面写个before，content-‘hi’-div里面就会出现hi" class="headerlink" title="使用css写content，ie6不支持-同样的原理，我们使用伪类，使用样式来写，找到元素，class=xxx，.xxx后面写个before，content: ‘hi’;div里面就会出现hi"></a>使用css写content，ie6不支持-同样的原理，我们使用伪类，使用样式来写，找到元素，class=xxx，.xxx后面写个before，content: ‘hi’;div里面就会出现hi</h3><p><img src="/2019/03/19/icon的各种做法/12.jpg" alt=""></p>
+<p><img src="/2019/03/19/icon的各种做法/13.jpg" alt=""></p>
+<p>利用iconfont里面的font class，都已经生成好了，可以直接使用</p>
+<p><img src="/2019/03/19/icon的各种做法/14.jpg" alt=""></p>
+<p>使用symbol添加icon，目前最适合、最流行的方式</p>
+<p><img src="/2019/03/19/icon的各种做法/15.jpg" alt=""></p>
+<p>最后一个方式：使用css自己画icon，不推荐，但可以提高技巧，例如使用css画个放大镜：</p>
+<p><img src="/2019/03/19/icon的各种做法/16.jpg" alt=""></p>
+<p>推荐学习网站：<a href="https://cssicon.space/#/" target="_blank" rel="noopener">https://cssicon.space/#/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/19/icon的各种做法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-堆叠上下文" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1233,180 +1324,6 @@
 
 
   
-    <article id="post-HTTP教程" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/08/HTTP教程/">HTTP教程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/08/HTTP教程/" class="archive-article-date">
-  	<time datetime="2019-02-08T04:47:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文的主要目的是介绍HTTP，由于网络上的相关教程很多，就选择了几篇写的比较专业的博客以个人的视角进行总(fuzhi)结(zhantie)，为了方便日后查询和学习.<br>当你在浏览器地址栏输入:<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> ，然后回车，出现在你面前的，即是百度的首页了，你也许认为这是理所当然的，但作为程序猿，尤其是web开发人员，我想你有必要去了解这个原理和这一系列的处理流程：client(客户端)和server(服务器)到底是如何沟通的？服务器是如何处理的？客户端/浏览器又是如何将网页显示给用户的呢？<br>HTTP协议(HyperText Transfer Protocol，超文本传输协议)是因特网上应用最为广泛的一种网络传输协议，是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议,所有的WWW文件都必须遵守这个标准。<br>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）。<br>HTTP是一个属于应用层的面向对象的协议，由于其简捷、快速的方式，适用于分布式超媒体信息系统。它于1990年提出，经过几年的使用与发展，得到不断地完善和扩展。最新版本是HTTP 2.0，目前是用最广泛的是HTTP 1.1。<br>HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。Web服务器根据接收到的请求后，向客户端发送响应信息。</p>
-<p><img src="/2019/02/08/HTTP教程/1.png" alt="请求响应图"><br>http请求-响应模型</p>
-<h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>协议是通信计算机双方必须共同遵从的一组约定。如怎么样建立连接、怎么样互相识别等。只有遵守这个约定，计算机之间才能相互通信交流。它的三要素是：语法、语义、时序。<br>简单来说，协议就是通信双方/多方都遵从共同的一个规范。<br>协议的一些特点：<br>1） 协议中的每个人都必须了解协议，并且预先知道所要完成的所有的步骤。<br>2） 协议中的每个人都必须同意并遵循它。<br>3） 协议必须是清楚的，每一步必须明确定义，并且不会引起误解。<br>HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。HTTP是一个无状态的协议。<br>在Internet中所有的传输都是通过TCP/IP进行的。HTTP协议作为TCP/IP模型中应用层的协议也不例外。HTTP协议通常承载于TCP协议之上，有时也承载于TLS或SSL协议层之上，这个时候，就成了我们常说的HTTPS。如下图所示：<br><img src="/2019/02/08/HTTP教程/2.png" alt="http图"></p>
-<p>HTTPS协议：简单来说，可以理解为安全版的HTTP协议，基于TCP/IP协议和SSL/TLS协议之上的应用层协议。默认端口443。</p>
-<h3 id="HTTP协议和HTTPS协议的区别"><a href="#HTTP协议和HTTPS协议的区别" class="headerlink" title="HTTP协议和HTTPS协议的区别"></a>HTTP协议和HTTPS协议的区别</h3><p>HTTP协议以明文方式发送内容，不提供任何方式的数据加密，如果攻击者截取了Web浏览器和网站服务器之间的传输报文，就可以直接读懂其中的信息，因此HTTP协议不适合传输一些敏感信息，比如密码等。<br>为了解决HTTP协议的这一缺陷，需要使用另一种协议：安全套接字层超文本传输协议HTTPS。为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。<br>HTTPS和HTTP的区别主要为以下四点：</p>
-<ol>
-<li>https协议需要到ca申请证书，一般免费证书很少，需要交费。</li>
-<li>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。</li>
-<li>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</li>
-<li>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络    协议，比http协议安全。</li>
-</ol>
-<h3 id="HTTP协议工作流程"><a href="#HTTP协议工作流程" class="headerlink" title="HTTP协议工作流程"></a>HTTP协议工作流程</h3><ol>
-<li>客户端和服务器之间建立一条连接</li>
-<li>连接建立后，客户端向服务器发起一个请求（request）</li>
-<li>服务器收到一个请求后，给客户端一个响应（应答，response）</li>
-<li>客户端收到响应后做进一步处理</li>
-</ol>
-<p><img src="/2019/02/08/HTTP教程/3.jpg" alt="浏览器服务器"></p>
-<h3 id="HTTP-工作原理"><a href="#HTTP-工作原理" class="headerlink" title="HTTP 工作原理"></a>HTTP 工作原理</h3><p>HTTP协议工作于客户端-服务端架构上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。<br>Web服务器有：Apache服务器，IIS服务器（Internet Information Services）等。<br>Web服务器根据接收到的请求后，向客户端发送响应信息。<br>HTTP默认端口号为80，但是你也可以改为8080或者其他端口。<br>HTTP三点注意事项：<br>HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。<br>HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。<br>HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>下图展示了HTTP协议通信流程：<br><img src="/2019/02/08/HTTP教程/4.jpg" alt="http通信流程图"></p>
-<h3 id="HTTP之URL"><a href="#HTTP之URL" class="headerlink" title="HTTP之URL"></a>HTTP之URL</h3><p>HTTP使用URI统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。URL是一种特殊类型的URI，包含了用于查找某个资源的足够的信息<br>URL,全称是Uniform Resource Locator, 中文是统一资源定位符,是互联网上用来标识某一处资源的地址。以下面这个URL为例，介绍下普通URL的各部分组成：<br><a href="http://www.aspxfans.com:8080/news/index.asp?boardID=5&amp;ID=24618&amp;page=1#name" target="_blank" rel="noopener">http://www.aspxfans.com:8080/news/index.asp?boardID=5&amp;ID=24618&amp;page=1#name</a></p>
-<p>从上面的URL可以看出，一个完整的URL包括以下几部分：</p>
-<ol>
-<li>协议部分：该URL的协议部分为“http：”，这代表网页使用的是HTTP协议。在Internet中可以使用多种协议，如HTTP，FTP等等本例中使用的是HTTP协议。在”HTTP”后面的“//”为分隔符</li>
-<li>域名部分：该URL的域名部分为“<a href="http://www.aspxfans.com”。一个URL中，也可以使用IP地址作为域名使用" target="_blank" rel="noopener">www.aspxfans.com”。一个URL中，也可以使用IP地址作为域名使用</a></li>
-<li>端口部分：跟在域名后面的是端口，域名和端口之间使用“:”作为分隔符。端口不是一个URL必须的部分，如果省略端口部分，将采用默认端口</li>
-<li>虚拟目录部分：从域名后的第一个“/”开始到最后一个“/”为止，是虚拟目录部分。虚拟目录也不是一个URL必须的部分。本例中的虚拟目录是“/news/”</li>
-<li>文件名部分：从域名后的最后一个“/”开始到“？”为止，是文件名部分，如果没有“?”,则是从域名后的最后一个“/”开始到“#”为止，是文件部分，如果没有“？”和“#”，那么从域名后的最后一个“/”开始到结束，都是文件名部分。本例中的文件名是“index.asp”。文件名部分也不是一个URL必须的部分，如果省略该部分，则使用默认的文件名</li>
-<li>锚部分：从“#”开始到最后，都是锚部分。本例中的锚部分是“name”。锚部分也不是一个URL必须的部分</li>
-<li>参数部分：从“？”开始到“#”为止之间的部分为参数部分，又称搜索部分、查询部分。本例中的参数部分为“boardID=5&amp;ID=24618&amp;page=1”。参数可以允许有多个参数，参数与参数之间用“&amp;”作为分隔符。<br>（原文：<a href="http://blog.csdn.net/ergouge/article/details/8185219" target="_blank" rel="noopener">http://blog.csdn.net/ergouge/article/details/8185219</a> ）</li>
-</ol>
-<h3 id="URI和URL的区别"><a href="#URI和URL的区别" class="headerlink" title="URI和URL的区别"></a>URI和URL的区别</h3><p>URI，是Uniform Resource Identifier：统一资源标识符，用来唯一的标识一个资源。<br>Web上可用的每种资源如HTML文档、图像、视频片段、程序等都是一个来URI来定位的。<br>URI一般由三部组成：</p>
-<ol>
-<li>访问资源的命名机制</li>
-<li>存放资源的主机名</li>
-<li>资源自身的名称，由路径表示，着重强调于资源。</li>
-</ol>
-<p>URL是Uniform Resource Locator，统一资源定位器，它是一种具体的URI，即URL可以用来标识一个资源，而且还指明了如何locate这个资源。<br>URL是Internet上用来描述信息资源的字符串，主要用在各种WWW客户程序和服务器程序上，特别是著名的Mosaic。<br>采用URL可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。URL一般由三部组成：</p>
-<ol>
-<li>协议(或称为服务方式)</li>
-<li>存有该资源的主机IP地址(有时也包括端口号)</li>
-<li>主机资源的具体地址。如目录和文件名等</li>
-</ol>
-<p>URN，Uniform Resource Name，统一资源命名，是通过名字来标识资源，比如mailto:<a href="mailto:java-net@java.sun.com" target="_blank" rel="noopener">java-net@java.sun.com</a>。<br>URI是以一种抽象的，高层次概念定义统一资源标识，而URL和URN则是具体的资源标识的方式。URL和URN都是一种URI。笼统地说，每个 URL 都是 URI，但不一定每个 URI 都是 URL。这是因为 URI 还包括一个子类，即统一资源名称 (URN)，它命名资源但不指定如何定位资源。上面的 mailto、news 和 isbn URI 都是 URN 的示例。<br>在Java的URI中，一个URI实例可以代表绝对的，也可以是相对的，只要它符合URI的语法规则。而URL类则不仅符合语义，还包含了定位该资源的信息，因此它不能是相对的。<br>在Java类库中，URI类不包含任何访问资源的方法，它唯一的作用就是解析。<br>相反的是，URL类可以打开一个到达资源的流。</p>
-<h3 id="下面我们来看看请求示例-由浏览器发出-："><a href="#下面我们来看看请求示例-由浏览器发出-：" class="headerlink" title="下面我们来看看请求示例(由浏览器发出)："></a>下面我们来看看请求示例(由浏览器发出)：</h3><p>curl -s -v -H “victor: xxx” – “<a href="https://www.baidu.com&quot;(用curl创造一个请求，并得到回应)" target="_blank" rel="noopener">https://www.baidu.com&quot;(用curl创造一个请求，并得到回应)</a><br><img src="/2019/02/08/HTTP教程/5.png" alt="请求结果"></p>
-<p>客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成。</p>
-<p><img src="/2019/02/08/HTTP教程/6.jpg" alt="请求内容"></p>
-<p>HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。</p>
-<p><img src="/2019/02/08/HTTP教程/7.jpg" alt="回应内容"></p>
-<h3 id="HTTP请求方法"><a href="#HTTP请求方法" class="headerlink" title="HTTP请求方法"></a>HTTP请求方法</h3><p>根据HTTP标准，HTTP请求可以使用多种请求方法。<br>HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法。<br>HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方法。</p>
-<ul>
-<li>GET      请求指定的页面信息，并返回实体主体。</li>
-<li>HEAD     类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头</li>
-<li>POST     向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。</li>
-<li>PUT      从客户端向服务器传送的数据取代指定的文档的内容。</li>
-<li>DELETE   请求服务器删除指定的页面。</li>
-<li>CONNECT  HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</li>
-<li>OPTIONS  允许客户端查看服务器的性能。</li>
-<li>TRACE    回显服务器收到的请求，主要用于测试或诊断。</li>
-</ul>
-<p>HTTP响应头信息，详见：<a href="https://www.runoob.com/http/http-header-fields.html" target="_blank" rel="noopener">https://www.runoob.com/http/http-header-fields.html</a></p>
-<h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><p>当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。<br>HTTP状态码的英文为HTTP Status Code。<br>下面是常见的HTTP状态码：<br>200 - 请求成功<br>301 - 资源（网页等）被永久转移到其它URL<br>404 - 请求的资源（网页等）不存在<br>500 - 内部服务器错误<br>更多状态码详见：<a href="https://www.runoob.com/http/http-status-codes.html" target="_blank" rel="noopener">https://www.runoob.com/http/http-status-codes.html</a></p>
-<p>GET和POST请求的区别，详见：<a href="https://www.cnblogs.com/ranyonsue/p/5984001.html" target="_blank" rel="noopener">https://www.cnblogs.com/ranyonsue/p/5984001.html</a></p>
-<h3 id="下面我们用Chrome开发者工具查看HTTP请求内容和响应内容"><a href="#下面我们用Chrome开发者工具查看HTTP请求内容和响应内容" class="headerlink" title="下面我们用Chrome开发者工具查看HTTP请求内容和响应内容"></a>下面我们用Chrome开发者工具查看HTTP请求内容和响应内容</h3><p>用 Chrome 发请求<br>打开 Network<br>地址栏输入网址：<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>选择 Network，点击 Header，查看 Request Headers，点击 view source<br>点击「view source」<br>点击「view source」<br>点击「view source」<br>终于点了？可以看到请求的前三部分了<br>如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到<br>请求内容见下图：</p>
-<p><img src="/2019/02/08/HTTP教程/8.png" alt="Request Header"></p>
-<p>请求的格式<br>1 动词 路径 协议/版本<br>2 Key1: value1<br>2 Key2: value2<br>2 Key3: value3<br>2 Content-Type: application/x-www-form-urlencoded<br>2 Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>2 User-Agent: curl/7.54.0<br>3<br>4 要上传的数据<br>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）<br>第三部分永远都是一个回车（\n）<br>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等<br>这里的路径包括「查询参数」，但不包括「锚点」<br>如果你没有写路径，那么路径默认为 /<br>第 2 部分中的 Content-Type 标注了第 4 部分的格式</p>
-<p>用 Chrome 查看响应<br>打开 Network<br>输入网址：<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>选中第一个响应<br>查看 Response Headers，点击「view source」，点击「view source」，点击「view source」<br>你会看到响应的前两部分<br>查看 Response 或者 Preview，你会看到响应的第 4 部分</p>
-<p><img src="/2019/02/08/HTTP教程/9.png" alt="Request Header"></p>
-<p>响应的格式<br>1 协议/版本号 状态码 状态解释<br>2 Key1: value1<br>2 Key2: value2<br>2 Content-Length: 17931<br>2 Content-Type: text/html<br>3<br>4 要下载的内容<br>状态码要背，是服务器对浏览器说的话<br>1xx 不常用<br>2xx 表示成功<br>3xx 表示滚吧<br>4xx 表示你丫错了<br>5xx 表示好吧，我错了<br>状态解释没什么用<br>第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>第 2 部分中的 Content-Type 遵循 MIME 规范</p>
-<h3 id="如何使用curl命令"><a href="#如何使用curl命令" class="headerlink" title="如何使用curl命令"></a>如何使用curl命令</h3><p><a href="https://curl.haxx.se/" target="_blank" rel="noopener">https://curl.haxx.se/</a><br>上面是curl的官网，我们可以从官网了解一些关于curl的消息。<br>比如：What’s curl used for?看下图</p>
-<p><img src="/2019/02/08/HTTP教程/10.png" alt="curl英文"><br><img src="/2019/02/08/HTTP教程/11.png" alt="curl中文"></p>
-<p>curl的全称是CommandLine URL，也就是说，curl是URL命令行，利用URL的语法进行数据传输或者文件传输的。<br>curl is free and open source software.官网显示curl是开源和免费的，功能很强大，支持三十多种传输方式：<br>Supports…<br>DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, Telnet and TFTP. curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, HTTP/2, cookies, user+password authentication (Basic, Plain, Digest, CRAM-MD5, NTLM, Negotiate and Kerberos), file transfer resume, proxy tunneling and more. </p>
-<p>最常使用的有FILE、FTP、HTTP、HTTPS等协议。<br>对于程序猿在说，开发远程服务的时候，比如http传输，SOCKET等网络编程时，这个工具能非常方便的作为你的验证工具和测试工具。<br>比如下面这个用法，通过输入：<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 甚至还不是一个完整的URL，因为没有指明所用的协议，curl可以智能地进行选择。<br>运行后，返回的是一个百度主页的HTML代码。</p>
-<p><img src="/2019/02/08/HTTP教程/12.png" alt="curl百度"></p>
-<p>本文主要介绍一些curl的常用命令，更多用法请参阅官网。</p>
-<p>一般语法如下：</p>
-<blockquote>
-<ul>
-<li>crul -[选项] [URL]</li>
-</ul>
-</blockquote>
-<ol>
-<li>-v选项，表示verbose，指定该选项后，显示的是http请求的通信过程。</li>
-</ol>
-<p>比如刚才演示的百度链接，加入-v后，看它多出了哪些选项。<br>加上-v后，我们得到了：<br>连接的IP地址和端口，协议（HTTP），请求方式（GET），包含状态码（200），内容格式（text/html），内容长度等等</p>
-<p><img src="/2019/02/08/HTTP教程/13.png" alt="curl -v"></p>
-<ol start="2">
-<li>-I选项，只获得对方的响应头部信息。</li>
-</ol>
-<p><img src="/2019/02/08/HTTP教程/14.png" alt="curl -I"></p>
-<ol start="3">
-<li>-X选项，指定请求方式，URL可以有多种请求方式，最常见的是GET和POST，但其他还有GET、PUT、POST、DELETE等多种方式。 </li>
-</ol>
-<p><img src="/2019/02/08/HTTP教程/15.png" alt="curl -X"></p>
-<p>curl还有很多实用的功能，更多见：<a href="https://www.cnblogs.com/yinzhengjie/p/7719804.html" target="_blank" rel="noopener">https://www.cnblogs.com/yinzhengjie/p/7719804.html</a> &amp; <a href="https://blog.csdn.net/deliciousion/article/details/78062521" target="_blank" rel="noopener">https://blog.csdn.net/deliciousion/article/details/78062521</a></p>
-<p>以上内容主要来自：</p>
-<ol>
-<li><a href="https://www.runoob.com/http/http-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/http/http-tutorial.html</a></li>
-<li><a href="https://www.cnblogs.com/likeliu/p/7452984.html" target="_blank" rel="noopener">https://www.cnblogs.com/likeliu/p/7452984.html</a></li>
-<li><a href="https://www.cnblogs.com/haiyan123/p/7777924.html" target="_blank" rel="noopener">https://www.cnblogs.com/haiyan123/p/7777924.html</a></li>
-<li><a href="https://www.cnblogs.com/ranyonsue/p/5984001.html" target="_blank" rel="noopener">https://www.cnblogs.com/ranyonsue/p/5984001.html</a><br>如有侵权，请联系<a href="mailto:373969304@qq.com" target="_blank" rel="noopener">373969304@qq.com</a>删除！</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">http协议 请求与响应 工作原理 状态码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/08/HTTP教程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1508,10 +1425,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">iframe  a  form  input/button  table</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">HTML5  所有标签  有效标签</a>
               </li>
              
@@ -1520,11 +1433,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">左右布局  左中右布局  水平居中  垂直居中</a>
+                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">git仓库   命令行   初始化   添加文件   提交文件</a>
+                <a href="javascript:void(0)" class="js-tag color4">左右布局  左中右布局  水平居中  垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1532,11 +1445,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
+                <a href="javascript:void(0)" class="js-tag color2">堆叠顺序  堆叠上下文</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">文档流相关  文字两端对齐  导航栏横向  word-break  多行文字溢出  文字垂直水平居中  margin合并</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">命令行</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">iframe  a  form  input/button  table</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1545,10 +1466,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">算法  计数排序  堆排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">堆叠顺序  堆叠上下文</a>
               </li>
             
             <div class="clearfix"></div>
