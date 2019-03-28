@@ -6,22 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>堆叠上下文 | 博客</title>
+  <title>布局套路 | 博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="堆叠上下文什么是堆叠顺序什么是堆叠上下文参考：http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/ 堆叠顺序 backgroundborder块级浮动内联z-index: 0z-index: +如果是兄弟元素重叠，那么后面的盖在前面的身上。 堆叠上下文https://de">
-<meta name="keywords" content="堆叠顺序  堆叠上下文">
+  <meta name="description" content="1.浮动布局：百分比布局  2.flex布局  3.但是有一个bug，如果少一个div，第二行的3个元素就不会向左靠齐了，怎么办？  解决办法2个：1-改成float布局；2-稍微改一改，看图：  4.现在宽度是写死的，那宽度能不能不写死？  使用calc即可：  5.下面加两个广告   如果不想兼容IE，还可以这样写，前提是浏览器支持计算属性：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="堆叠上下文">
-<meta property="og:url" content="http://yoursite.com/2019/03/19/堆叠上下文/index.html">
+<meta property="og:title" content="布局套路">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/布局套路/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="堆叠上下文什么是堆叠顺序什么是堆叠上下文参考：http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/ 堆叠顺序 backgroundborder块级浮动内联z-index: 0z-index: +如果是兄弟元素重叠，那么后面的盖在前面的身上。 堆叠上下文https://de">
+<meta property="og:description" content="1.浮动布局：百分比布局  2.flex布局  3.但是有一个bug，如果少一个div，第二行的3个元素就不会向左靠齐了，怎么办？  解决办法2个：1-改成float布局；2-稍微改一改，看图：  4.现在宽度是写死的，那宽度能不能不写死？  使用calc即可：  5.下面加两个广告   如果不想兼容IE，还可以这样写，前提是浏览器支持计算属性：">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2019/03/19/堆叠上下文/1.jpg">
-<meta property="og:updated_time" content="2019-03-19T13:28:27.949Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/6.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/8.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/9.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/10.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/11.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/12.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/13.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/14.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/15.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/16.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/03/28/布局套路/17.jpg">
+<meta property="og:updated_time" content="2019-03-28T13:46:21.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="堆叠上下文">
-<meta name="twitter:description" content="堆叠上下文什么是堆叠顺序什么是堆叠上下文参考：http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/ 堆叠顺序 backgroundborder块级浮动内联z-index: 0z-index: +如果是兄弟元素重叠，那么后面的盖在前面的身上。 堆叠上下文https://de">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/19/堆叠上下文/1.jpg">
+<meta name="twitter:title" content="布局套路">
+<meta name="twitter:description" content="1.浮动布局：百分比布局  2.flex布局  3.但是有一个bug，如果少一个div，第二行的3个元素就不会向左靠齐了，怎么办？  解决办法2个：1-改成float布局；2-稍微改一改，看图：  4.现在宽度是写死的，那宽度能不能不写死？  使用calc即可：  5.下面加两个广告   如果不想兼容IE，还可以这样写，前提是浏览器支持计算属性：">
+<meta name="twitter:image" content="http://yoursite.com/2019/03/28/布局套路/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -157,34 +172,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-堆叠上下文" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-布局套路" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      堆叠上下文
+      布局套路
     </h1>
   
 
         
-        <a href="/2019/03/19/堆叠上下文/" class="archive-article-date">
-  	<time datetime="2019-03-19T13:24:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
+        <a href="/2019/03/28/布局套路/" class="archive-article-date">
+  	<time datetime="2019-03-28T07:09:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="堆叠上下文"><a href="#堆叠上下文" class="headerlink" title="堆叠上下文"></a>堆叠上下文</h3><p>什么是堆叠顺序<br>什么是堆叠上下文<br>参考：<a href="http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/" target="_blank" rel="noopener">http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/</a></p>
-<h3 id="堆叠顺序"><a href="#堆叠顺序" class="headerlink" title="堆叠顺序"></a>堆叠顺序</h3><p><img src="/2019/03/19/堆叠上下文/1.jpg" alt=""></p>
-<p>background<br>border<br>块级<br>浮动<br>内联<br>z-index: 0<br>z-index: +<br>如果是兄弟元素重叠，那么后面的盖在前面的身上。</p>
-<h3 id="堆叠上下文-1"><a href="#堆叠上下文-1" class="headerlink" title="堆叠上下文"></a>堆叠上下文</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context</a></p>
-<p>可以理解为堆叠作用域。跟 BFC 一样，我们只知道一些属性会触发堆叠上下文，但并不知道堆叠上下文是什么。</p>
-<blockquote>
-<p>根元素 (HTML),<br>z-index 值不为 “auto”的 绝对/相对定位，<br>一个 z-index 值不为 “auto”的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，<br>opacity 属性值小于 1 的元素（参考 the specification for opacity），<br>transform 属性值不为 “none”的元素，<br>mix-blend-mode 属性值不为 “normal”的元素，<br>filter值不为“none”的元素，<br>perspective值不为“none”的元素，<br>isolation 属性被设置为 “isolate”的元素，<br>position: fixed<br>在 will-change 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值（参考 这篇文章）<br>-webkit-overflow-scrolling 属性被设置 “touch”的元素</p>
-</blockquote>
+        <p>1.浮动布局：百分比布局</p>
+<p><img src="/2019/03/28/布局套路/1.jpg" alt=""><br><img src="/2019/03/28/布局套路/2.jpg" alt=""><br><img src="/2019/03/28/布局套路/3.jpg" alt=""><br><img src="/2019/03/28/布局套路/4.jpg" alt=""><br><img src="/2019/03/28/布局套路/5.jpg" alt=""><br><img src="/2019/03/28/布局套路/6.jpg" alt=""><br><img src="/2019/03/28/布局套路/7.jpg" alt=""><br><img src="/2019/03/28/布局套路/8.jpg" alt=""><br><img src="/2019/03/28/布局套路/9.jpg" alt=""></p>
+<p>2.flex布局</p>
+<p><img src="/2019/03/28/布局套路/10.jpg" alt=""></p>
+<p>3.但是有一个bug，如果少一个div，第二行的3个元素就不会向左靠齐了，怎么办？</p>
+<p><img src="/2019/03/28/布局套路/11.jpg" alt=""></p>
+<p>解决办法2个：1-改成float布局；<br>2-稍微改一改，看图：</p>
+<p><img src="/2019/03/28/布局套路/12.jpg" alt=""></p>
+<p>4.现在宽度是写死的，那宽度能不能不写死？</p>
+<p><img src="/2019/03/28/布局套路/13.jpg" alt=""></p>
+<p>使用calc即可：</p>
+<p><img src="/2019/03/28/布局套路/14.jpg" alt=""></p>
+<p>5.下面加两个广告</p>
+<p><img src="/2019/03/28/布局套路/15.jpg" alt=""></p>
+<p><img src="/2019/03/28/布局套路/16.jpg" alt=""></p>
+<p>如果不想兼容IE，还可以这样写，前提是浏览器支持计算属性：</p>
+<p><img src="/2019/03/28/布局套路/17.jpg" alt=""></p>
 
       
 
@@ -214,17 +238,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">堆叠顺序  堆叠上下文</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -275,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/19/堆叠上下文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/28/布局套路/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,18 +302,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/19/icon的各种做法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          icon的各种做法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/14/文档流宽高-对齐-导航-word-break/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">文档流宽高-对齐-导航-word-break</div>
+    <a href="/2019/03/26/flex全解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flex全解</div>
       <i class="icon-circle-right"></i>
     </a>
   

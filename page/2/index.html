@@ -152,6 +152,298 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTML常用标签解析" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/14/HTML常用标签解析/">HTML常用标签解析</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/14/HTML常用标签解析/" class="archive-article-date">
+  	<time datetime="2019-02-14T02:17:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h3><p>目前用的很少，一般是5年前的项目，很可能会看到这个标签，用于在一个页面里面嵌套一个页面。我们来举例说明：下面写完的代码会在iframe里显示，检查源代码看一下</p>
+<p><img src="/2019/02/14/HTML常用标签解析/1.png" alt=""></p>
+<p>那我们平时怎么用iframe呢？<br>就是你想嵌套一个页面的时候，比如我们嵌套一下qq.com,只需要在iframe里面输入QQ的网页即可。</p>
+<p><img src="/2019/02/14/HTML常用标签解析/2.png" alt=""></p>
+<p>iframe里还有一个默认的frameboder=0，这个属性如果不写的话，iframe就会有一个边框（boder），会很难看，所以所有的iframe默认的frameboder=0用来消除边框。<br>iframe有一个name的属性，跟a标签target结合起来用才有效果（name=target），如果没有a标签，这个name基本是没什么用。<br>iframe里的src一般都是网址，是可以写相对路径的，我们在第一个页面（index.html）写一个iframe，src=./index2.html（当前目录的index2.html，就跟我们在命令行里面写相对路径是一样的，它就会去渲染当前目录下的index2.html），打开index.html，就会看到index2的页面，就是一个iframe。</p>
+<p><img src="/2019/02/14/HTML常用标签解析/3.png" alt=""></p>
+<p><img src="/2019/02/14/HTML常用标签解析/4.png" alt=""></p>
+<p><img src="/2019/02/14/HTML常用标签解析/5.png" alt=""></p>
+<h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>a标签可以指定一个iframe打开页面，见下图：</p>
+<p><img src="/2019/02/14/HTML常用标签解析/6.png" alt=""></p>
+<p>定义和用法：a标签定义超链接，用于从一张页面链接到另一张页面；元素最重要的属性是href属性，它指示链接的目标。</p>
+<p>在所有浏览器中，链接的默认外观是：</p>
+<ul>
+<li>未被访问的链接带有下划线而且是蓝色的；</li>
+<li>已被访问的链接带有下划线而且是紫色的；</li>
+<li>活动链接带有下划线而且是红色的；</li>
+</ul>
+<p>可以使用css伪类向文本超链接添加复杂而多样的样式。</p>
+<p>提示：</p>
+<ul>
+<li>如果不是用href属性，则不可以使用如下属性：download，hreflang，media，rel，target以及type属性；</li>
+<li>被链接页面通常显示在当前浏览器窗口中，除非你规定了另一个目标（target属性）；</li>
+<li>请使用css来设置链接的样式；</li>
+</ul>
+<p>在HTML5中，a标签始终是超链接，但如果未设置href属性，则只是超链接的占位符。<br>属性：HTML5中的新属性</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">download</td>
+<td style="text-align:left">filename</td>
+<td style="text-align:left">规定被下载的超链接目标</td>
+</tr>
+<tr>
+<td style="text-align:left">href</td>
+<td style="text-align:left">URL</td>
+<td style="text-align:left">规定链接指向的页面的URL</td>
+</tr>
+<tr>
+<td style="text-align:left">hreflang</td>
+<td style="text-align:left">language_code</td>
+<td style="text-align:left">规定被链接文档的语言</td>
+</tr>
+<tr>
+<td style="text-align:left">media</td>
+<td style="text-align:left">media_query</td>
+<td style="text-align:left">规定被链接文档为何种媒介/设备优化的</td>
+</tr>
+<tr>
+<td style="text-align:left">rel</td>
+<td style="text-align:left">text</td>
+<td style="text-align:left">规定当前文档与被链接文档之间的关系</td>
+</tr>
+<tr>
+<td style="text-align:left">target</td>
+<td style="text-align:left">_blank/_self/_parent/_top/framename</td>
+<td style="text-align:left">规定在何处打开链接文档</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">MIME type</td>
+<td style="text-align:left">规定被链接文档的MIME类型</td>
+</tr>
+</tbody>
+</table>
+<p>a标签支持HTML中的全局属性和事件属性。<br>a标签的作用：用于控制界面与页面之间的跳转。</p>
+<p>a标签的格式：<code>&lt;a href=&quot;指定要跳转的目标界面的链接&quot;&gt;需要展示给用户看见的内容&lt;/a&gt;</code></p>
+<blockquote>
+<p><code>&lt;a href=&quot;http://baidu.com&quot;&gt;百度&lt;/a&gt;</code></p>
+</blockquote>
+<p>a标签中还有一个属性，叫做title，a标签中的title和img标签中title一样，都是用来控制鼠标悬停时显示的提示文本内容的：</p>
+<blockquote>
+<p><code>&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; title=&quot;点击会跳转到百度首页喔&quot;&gt;百度&lt;/a&gt;</code></p>
+</blockquote>
+<p>a标签的target属性，这个属性的作用就是专门用于控制如何跳转。<br>target里面的有四个自带的值：<br>_self：用于在当前选项卡中跳转，也就是不新建页面跳转。<br>_blank：用于在新的/空的选项卡中跳转。<br>_parent：指向父frameset文档/将链接的文件载入含有该链接框架的父框架集或父窗口中。如果含有该链接的框架不是嵌套的，则在浏览器全屏窗口中载入链接的文件，就象_self参数一样。<br>_top:去掉所有页框并用document.html取代frameset文档/在当前的整个浏览器窗口中打开所链接的文档，因而会删除所有框架。</p>
+<p>target中download，一个网页既可以用浏览器查看，也可以是浏览器下载，那怎么确定？</p>
+<ol>
+<li>第一种是根据HTML响应里面的content-type；</li>
+<li>第二种是a标签可以指定，就是强制下载。</li>
+</ol>
+<p><img src="/2019/02/14/HTML常用标签解析/7.png" alt=""></p>
+<p>a标签最基础href属性用法如下： </p>
+<blockquote>
+<p><code>&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;（指向百度的网站）</code></p>
+</blockquote>
+<p>我们在浏览网页的时候经常看到<a>标签的其它用法：（即a标签的href到底能写什么东西）</a></p>
+<ol>
+<li><code>&lt;a href=&quot;#&quot;&gt;回到顶部&lt;/a&gt; 这种是一个空链接，但是如果页面有滚动条的时候，点击这种链接可以直接回到顶部，在网页底部加一个回到顶部的按钮的时候这种连接非常简单也很实用；</code></li>
+<li><code>&lt;a href=&quot;javascript:void(0);&quot;&gt;&lt;/a&gt; 这个在使用过程中也会经常遇到，你会发现点击这个链接不会有任何动作，也就是没有任何反应。既然没有任何反应干嘛要这个方法，一般这样的都是搭配js函数使用，如下面第三点的使用方法；</code></li>
+<li><code>&lt;a href=&quot;javascript:void(0);&quot; onclick=&quot;gotop()&quot;&gt;回到顶部&lt;/a&gt; 这个方法比较常用，也是经常看到的，点击标签不会有任何反应，但是会执行onclick里面的js函数，比如上面的gotop()函数如果写的是回到顶部，那么点击这个标签同样是回到顶部，有人就说了，方法1中不是说那个方法非常简单吗，那为什么还要用这个方法呢？第一种方法是简单，但是回到顶部的效果也是非常的普通，搭配js效果会让回到顶部的效果更好。onclick里面的函数可以随便写，实现任何你想实现的效果；</code></li>
+<li><code>&lt;a href=&quot;javascript:;&quot; onclick=&quot;gotop()&quot;&gt;回到顶部&lt;/a&gt; 这个方法和第三个方法一致。写法不一样。功能完全一样；</code></li>
+<li><code>&lt;a href=&quot;#top&quot;&gt;QQ&lt;/a&gt; 这个方法也是比较常见的一种，称作锚文本，实现的功能是点击这个按钮回到此页面一个id为top的地方，这个对跳转到指定内容非常方便。如果想跳到别的页面的某个位置这个方法同样实用。方法是：href=&quot;/content.html#contact&quot; 这样就可以跳转到content.html页面的id为contact 的地方。</code></li>
+</ol>
+<p><strong>注意：</strong><br>1.a标签不仅可以让文字可以点击，还可以让图片也能够被点击；<br>2.一个a标签必须有一个href属性，否则a标签不知道要跳转到什么地方；<br>3.如果通过a标签的href属性指定一个URL地址，那么必须在地址前面加上http://或https://；<br>4.a标签的href属性除了可以绑定一个网络地址以外，还可以指定一个本地的地址。</p>
+<p><strong>小技巧：</strong></p>
+<ol>
+<li><code>使别人的页框不能引用你的网页，在文件头加：&lt;base target=&quot;_top&quot;&gt;</code></li>
+<li><code>在当前页打开连接或做刷新，提交到当前页在文件头加：&lt;base target=&quot;_self&quot;&gt;</code></li>
+</ol>
+<h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><p>表单主要是用于搜集不同类型的用户输入的内容。有了表单，网页的内容可以由用户自己创建，那么对于网页来说，我们既是网页创建者，也是网页的消费者。</p>
+<p><strong>重要属性：</strong></p>
+<ul>
+<li>action：表示当前表单中的内容提交给哪个页面进行处理；</li>
+<li>method:表示当前表单提交的方式，常见的有get和post方式，默认是get提交。</li>
+</ul>
+<p>a标签是跳转域名，那form标签也是跳转域名，那a标签和form标签有什么区别呢？</p>
+<ul>
+<li>a标签跳转页面的时候发起的是get请求；</li>
+<li>form标签跳转页面的时候发起的是是post请求。</li>
+</ul>
+<p>几个要点：</p>
+<ul>
+<li>如果form标签没有提交（submit）按钮，就没有办法提交，所以必须要有提交按钮；</li>
+<li>form标签主要是用来发起一个post请求，至于post请求响应什么，form不管；</li>
+<li>你的name最终会被带到第四部分，作为它的key；</li>
+<li>file协议是不支持post的。</li>
+<li>method一般是post，也能写get，但是意义不大，为什么不用a标签？如果你要get一个东西，你就直接用a标签，如果你要上传一个东西，你就用form。只能写post和get，get一般不用，如果用的话，请注意，那么它不会把你写的参数放到第四部分，它会把你写的参数写到查询参数里面（显示到第一行网址后面，明文显示），所以get会把参数放到查询参数里面，它不会出现第四部分，那post会默认把参数放到第四部分（formdata），不会出现查询参数，但我们可以让post出现查询参数，手动写到action到后面就行了。</li>
+<li>form标签和a标签一样，也有target，所以form标签和a标签是一对，因为a标签也有target，所以form标签也有target。而且form标签的target和a标签的target的规则是一样的， 所以a标签和form标签都是用来发请求的，只不过a标签是get一个页面，而form标签是post一个页面。</li>
+</ul>
+<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p>input标签最难记的就是type属性。表示输入框，有多种属性，可以根据type属性来确定显示哪种输入框。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">inout属性值</th>
+<th style="text-align:left">说   明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">type=”text”</td>
+<td style="text-align:left">单行文本输入框</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”password”</td>
+<td style="text-align:left">密码输入框</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”checkbox”</td>
+<td style="text-align:left">复选框</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”radio”</td>
+<td style="text-align:left">单选框</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”file”</td>
+<td style="text-align:left">文件域</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”submit”</td>
+<td style="text-align:left">将表里的信息提交给表单属性action所指向的文件</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”reset”</td>
+<td style="text-align:left">将表单里的信息清空，重新填写</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”image”</td>
+<td style="text-align:left">图片提交按钮</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”button”</td>
+<td style="text-align:left">按钮</td>
+</tr>
+<tr>
+<td style="text-align:left">type=”hidden”</td>
+<td style="text-align:left">隐藏域</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/2019/02/14/HTML常用标签解析/8.png" alt=""></p>
+<p>注意几点：</p>
+<ul>
+<li>对于input来说，它的type的默认值是text，表示单行文本；</li>
+<li>对于input，最好给它添加一个name属性，作用是用于将用户输入的内容提交给要处理这个数据的页面；</li>
+<li>每一个input标签都有一个value属性，不同类型的input， value的作用也不同；<ul>
+<li>对于type=”text”来说，value可有可无，因为用户输入的内容都可以提交过去。</li>
+<li>对于type=”radio”或type=”checkbox”来说，没有value，是提交不了的。</li>
+</ul>
+</li>
+<li>对于type=”radio”来说，如果你只想选择一个，需要给每个input添加一个name属性，属性值也必须一致，如果不添加，就不能满足单选框的需求。</li>
+<li>关于单行文本的宽度，可以使用size属性来设置，表示字符长度，实际上不用，我们一般是通过CSS进行控制。</li>
+<li>关于checkbox，一般在checkbox的右边写一些文字，就可以点击，但有一个问题：如果鼠标点击了文字，就会没反应，那如果我们希望点击文字这个checkbox自动勾选，我们应该怎么办？用label，label的用途就为了跟一个input关联，label的for和input的id是一对，他们要一起出现，但是起id是不是很麻烦？老司机一般不这么写，不想写for，也不想写id，那怎么写？直接用label把input包起来，就自动会建立关联。checkbox也一样，用label直接包起来。</li>
+<li>关于radio，就是一个圆点可以点，那它怎么用呢？跟checkbox不一样，radio是单选框，checkbox是多选框，radio给同一个名字，是二选一，checkbox给同一个名字，是可以都选上。</li>
+<li>input和button的区别有一个，就是input是没有子元素的，button是可以有子元素的。</li>
+</ul>
+<p>select和option用法<br>作用：用来实现下拉列表<br><code>格式：&lt;select name=&quot;&quot; multiple&gt;</code><br>        <code>&lt;option value=&quot;&quot;&gt;内容&lt;/option&gt;</code><br>        <code>&lt;option value=&quot;&quot;&gt;内容&lt;/option&gt;</code><br>        <code>&lt;option value=&quot;&quot;&gt;内容&lt;/option&gt;</code><br>     <code>&lt;/select&gt;</code></p>
+<p><img src="/2019/02/14/HTML常用标签解析/9.png" alt=""></p>
+<p>注意：</p>
+<ul>
+<li>默认情况下，提交时，它将option里面的内容作为提交的内容，但是通常我们不这样做，我们通常给opton设置一个value属性，属性值我们通常用数字（1、2、3、4）。</li>
+<li>我们还可以使用selected属性让某个option处理默认选中状态,使用disabled属性让某个option处理选不中状态。同时select还有一个multiple的属性,意思是可以多选，按着ctrl/shift一起提交。</li>
+</ul>
+<p>textarea（多行文本）用法</p>
+<p>作用：提供输入大量或者多行文本的输入框，比如，QQ空间中发表状态，贴吧发表贴子等。<br><code>格式：&lt;textarea&gt;&lt;/textarea&gt;</code><br><code>textarea一定要给个name，没有name就不行</code></p>
+<p>用css可以控制框是不是可以拉，拉的话可能会出bug，所以一般用css把宽高设置成固定值，如：style=”resize:none; width:200px; height:100px;”用来控制宽高，还可以使用cols（列）和rows（行）设置多少行和多少列，有可能不是很准确，所以还是使用css比较靠谱。</p>
+<p><img src="/2019/02/14/HTML常用标签解析/10.png" alt=""></p>
+<h3 id="button标签"><a href="#button标签" class="headerlink" title="button标签"></a>button标签</h3><p><code>&lt;button&gt; 标签定义一个按钮。</code><br><code>在 button 元素内部，您可以放置内容，比如文本或图像。这是该元素与使用 input 元素创建的按钮之间的不同之处。</code><br><code>&lt;button&gt; 控件 与 &lt;input type=&quot;button&quot;&gt; 相比，提供了更为强大的功能和更丰富的内容。&lt;button&gt; 与 &lt;/button&gt; 标签之间的所有内容都是按钮的内容，其中包括任何可接受的正文内容，比如文本或多媒体内容。例如，我们可以在按钮中包括一个图像和相关的文本，用它们在按钮中创建一个吸引人的标记图像。</code><br>唯一禁止使用的元素是图像映射，因为它对鼠标和键盘敏感的动作会干扰表单按钮的行为。<br>请始终为按钮规定 type 属性。</p>
+<p>举例：标签button，以前只是当作一个按钮来使用，最近的一个项目中使用了jquery.form.js，页面中的click事件总是触发form表单提交，很神奇，后来发现button默认type submit，如果只是button需要添加type button，问题结局：只有ie默认button是type button，其他浏览器默认button为type submit。</p>
+<p>注意几点：（button和submit的区别）</p>
+<ul>
+<li>如果一个form里面只有一个按钮button，没有写type，那么它会自动升级为提交按钮（submit），如果写了type=button，它就按照你的type写的，点了没用，说明这个form表单没有提交按钮，因为你就没写，但是你把type删掉，它就自动升级提交按钮或者它默认为提交按钮；</li>
+<li>如果用input，type=button，value=button，也同样提交不了，因为没有提交按钮，如果把type改成submit=button，就可以提交了，就可以发起一个post请求了。</li>
+<li>所以submit是唯一能确定这个form表单能不能点击提交的按钮，那如果type=button呢，它跟提交没什么关系，就是一个普通的按钮。</li>
+</ul>
+<h3 id="table标签"><a href="#table标签" class="headerlink" title="table标签"></a>table标签</h3><p>首先HTML规定：table里面只能有三个元素，thead（table head）table表头，tbody（table body）table表主体，tfoot（table foot）table的脚。它们里面可以有tr（table row意思是可以写一行），tr里有td（table data表的数据）。thead的tr里应该是th（theader表的标题），同样也可以在tbody和tfoot里加th，th可以空着，这样就可以填写内容，tbody里可以有多个tr。要理解th和td的区别，th是表头，td是数据。<br>还有一个colgroup，跟col一起用，表示这一列目前只有一个属性有用，就是宽度，当我写col=100，那这一列就是100像素宽，第二列第三列都是这样命名。此时 table里可以加上border=1，就会有一个边框出现，整体看起来就像一个列表了。table的border是可以合并起来的，使用css属性，看示例:</p>
+<p><img src="/2019/02/14/HTML常用标签解析/11.png" alt=""></p>
+<p>注意事项：</p>
+<ul>
+<li>第一个特点：不管你把thead、tbody和tfoot如何变换顺序，即使脚放到头上面，也没有区别，它的展示都是一样的，因为浏览器会自动纠正顺序； colgroup是没有可见部分的，所以是不需要展示。</li>
+<li>tbody，thead，tfoot都不写的话，浏览器也分不出来谁是头谁是尾，那它的顺序就是按你写的顺序来排。</li>
+</ul>
+<p>完！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">iframe  a  form  input/button  table</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/14/HTML常用标签解析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTML标签列表" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1059,7 +1351,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Git   命令行   释义</a>
+                <a href="javascript:void(0)" class="js-tag color3">HTML5  所有标签  有效标签</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">http协议 请求与响应 工作原理 状态码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1067,11 +1363,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">HTML5  所有标签  有效标签</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">http协议 请求与响应 工作原理 状态码</a>
+                <a href="javascript:void(0)" class="js-tag color5">Git   命令行   释义</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1091,15 +1383,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">算法  计数排序  堆排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">命令行</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">文档流相关  文字两端对齐  导航栏横向  word-break  多行文字溢出  文字垂直水平居中  margin合并</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">算法  计数排序  堆排序</a>
               </li>
              
               <li class="article-tag-list-item">
